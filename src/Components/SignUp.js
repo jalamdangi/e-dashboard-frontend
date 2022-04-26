@@ -7,11 +7,12 @@ const SignUp = () => {
     
     const getData = (e) => {
         e.preventDefault();
-        console.log(name,email,password);
+        // console.log(name,email,password);
+        // setName(""),setEmail(""),setPassword("")
     }
     return (
         <div>
-            <div className="container w-50">
+            <div className="container w-80">
                 <h4 className='py-3' >User Registration Page</h4>
                 <form>
                     <div className="form-group">
