@@ -1,9 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const SignUp = () => {
+  const Navigate = useNavigate()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+
+  useEffect(()=>{
+    const auth = localStorage.getItem("user")
+    if(auth){
+      Navigate('/')
+    }
+  })
+
 
   const getData = async (e) => {
     e.preventDefault()
@@ -17,11 +27,15 @@ const SignUp = () => {
       },
     })
     result = await result.json()
-    console.log(result)
+    localStorage.setItem('user', JSON.stringify(result))
+    // console.log(result)
+    if (result) {
+        Navigate('/')
+    }
   }
   return (
     <div>
-      <div className="container w-80">
+      <div className="container w-80 bg-light">
         <h4 className="py-3">User Registration Page</h4>
         <form>
           <div className="form-group">
