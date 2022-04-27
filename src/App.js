@@ -7,7 +7,7 @@ import AddProduct from './Components/AddProduct';
 import UpdateProduct from './Components/UpdateProduct';
 import Profile from './Components/Profile';
 import Logout from './Components/Logout';
-import Footer from './Components/Footer';
+// import Footer from './Components/Footer';
 import SignUp from './Components/SignUp';
 
 function App() {
