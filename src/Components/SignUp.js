@@ -6,15 +6,12 @@ const SignUp = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-
   useEffect(()=>{
     const auth = localStorage.getItem("user")
     if(auth){
       Navigate('/')
     }
   })
-
-
   const getData = async (e) => {
     e.preventDefault()
     // console.log(name,email,password);
