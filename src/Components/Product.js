@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import {NavLink} from 'react-router-dom'
 
 const Product = () => {
   const [products, setProducts] = useState([])
@@ -21,7 +22,6 @@ const Product = () => {
       getProduts()
     }
   }
-
   return (
     <>
       <div className="container-fluid bg-light">
@@ -41,7 +41,7 @@ const Product = () => {
                     <p className="pl-2">Price : {item.productprice}</p>
                     <div className="row">
                       <div className="col-md-6">
-                        <a href="#" className="btn btn-warning">
+                        <a href="#" className="btn btn-success">
                           Chek More
                         </a>
                       </div>
@@ -50,12 +50,15 @@ const Product = () => {
                       </div>
                     </div>
                   </div>
-                  <button
-                    onClick={() => deleteProduct(item._id)}
-                    className="btn btn-danger"
-                  >
-                    Delete Product
-                  </button>
+                  <div className="card-bottom">
+                    <button
+                      onClick={() => deleteProduct(item._id)}
+                      className="btn btn-danger mr-2"
+                    >
+                      Delete Product
+                    </button>
+                    <button className='btn btn-warning'><NavLink to={`/updateproduct/${item._id}`}>Update Product</NavLink></button>
+                  </div>
                 </div>
               </div>
             )

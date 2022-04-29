@@ -15,3 +15,8 @@ body{
   }
   .price{font-weight: bold;}
   .text-right{color: whitesmoke; font-weight: bold;}
+  .card-bottom{
+      display: flex;
+      justify-content: space-between;
+  }
+  .card-bottom a {text-decoration: none; color: white;}

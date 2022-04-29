@@ -21,7 +21,7 @@ function App() {
             <Route element={<PrivateComponent/>}>
               <Route exact path="/" element={<Product/>}/>
               <Route exact path="/addproduct" element={<AddProduct/>}/>
-              <Route exact path="/updateproduct" element={<UpdateProduct/>}/>
+              <Route exact path="/updateproduct/:id" element={<UpdateProduct/>}/>
               <Route exact path="/profile" element={<Profile/>}/>
               <Route exact path="/logout" element={<Logout/>}/>
             </Route>
