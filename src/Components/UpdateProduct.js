@@ -1,8 +1,9 @@
 import React, { useEffect,useState } from "react";
 import addproduct_image from '../images/addproduct_image.svg'
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const UpdateProduct = () => {
+    const navigate = useNavigate()
     const { id } = useParams()
     const [productname, setProductname] = useState("")
     const [productprice, setProductprice] = useState("")
@@ -10,7 +11,6 @@ const UpdateProduct = () => {
     const [productbrand, setProductbrand] = useState("")
 
     useEffect(() => {
-        // console.log(id);
         getProductById();
     }, [])
     const getProductById = async () =>{
@@ -22,13 +22,24 @@ const UpdateProduct = () => {
         setProductcategory(result.productcategory)
         setProductbrand(result.productbrand)
     }
+    const updateProduct = async () =>{
+        let result = await fetch(`http://localhost:5000/updateproduct/${id}`,{
+            method:'put',
+            body:JSON.stringify({productname,productprice,productcategory,productbrand}),
+            headers:{
+                'Content-Type':'application/json'
+            }
+        })
+        result = await result.json();
+        navigate('/')
+
+    }
     return (
         <>
             <div className="container bg-light border">
                 <div className="row">
                     <div className="col-md-5 pt-5">
                         <h4 className="addproduct-head">Update Your Product Here</h4>
-                        <form>
                             <div className="form-group">
                                 <label>Product Name</label>
                                 <input
@@ -68,10 +79,9 @@ const UpdateProduct = () => {
                                     value={productbrand}
                                 />
                             </div>
-                            <button type="submit" className="btn btn-success">
+                            <button onClick={()=>updateProduct(id)} className="btn btn-success">
                                 Update Product
                             </button>
-                        </form>
                     </div>
                     <div className="col-md-7">
                         <img src={addproduct_image} className="addproduct-image" alt="error" />
