@@ -9,8 +9,6 @@ const Userdata = () => {
     let result = await fetch('https://jsonplaceholder.typicode.com/posts')
     result = await result.json()
     setData(result)
-    // console.log(result.Countries[2].Country);
-    // console.log(result.Global.NewConfirmed);
   }
   // console.log(data)
 
@@ -22,9 +20,9 @@ const Userdata = () => {
       <div className="row">
         {data.map((item, index) => {
           return (
-            <div className="col-md-4" key={index}>
+            <div className="col-md-4 p-2" key={index}>
               <div className="card">
-                <div className="card-body">
+                <div className="card-body text-truncate">
                   <h5 className="card-title">{item.id}</h5>
                   <p className="card-text">{item.tile}</p>
                   <p className="card-text">{item.body}</p>

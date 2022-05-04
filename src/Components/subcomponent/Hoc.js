@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 const Hoc = () => {
   return (
     <>
-      <h4 className="p-2 text-green">Welcome To Hoc Component..</h4>
+      <h4 className="p-2 text-green text-center">Welcome To Hoc Component..</h4>
       <Hocred cmp={Counter}></Hocred>
       <Hocgreen cmp={Counter}></Hocgreen>
       <Hocblue cmp={Counter}></Hocblue>
@@ -12,21 +12,21 @@ const Hoc = () => {
 }
 const Hocred = (props) => {
   return (
-    <h2 className="w-25 bg-danger text-center">
+    <h2 className="w-100 p-3 bg-danger text-center">
       <props.cmp />
     </h2>
   )
 }
 const Hocgreen = (props) => {
   return (
-    <h2 className="w-25 bg-success text-center">
+    <h2 className="w-100 p-3 bg-success text-center">
       <props.cmp />
     </h2>
   )
 }
 const Hocblue = (props) => {
   return (
-    <h2 className="w-25 bg-dark text-center">
+    <h2 className="w-100 p-3 bg-dark text-center">
       <props.cmp />
     </h2>
   )

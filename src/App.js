@@ -12,6 +12,7 @@ import SignUp from './Components/SignUp';
 import PrivateComponent from './Components/PrivateComponent';
 import Login from './Components/Login';
 import Advancetopics from './Components/Advancetopics';
+import Productdetail from './Components/Productdetail';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               <Route exact path="/advancetopics" element={<Advancetopics/>}/>
               <Route exact path="/profile" element={<Profile/>}/>
               <Route exact path="/logout" element={<Logout/>}/>
+              <Route exact path="/productdetail/:id" element={<Productdetail/>}/>
             </Route>
               <Route exact path="/login" element={<Login/>}/>
               <Route exact path="/signup" element={<SignUp/>}/>

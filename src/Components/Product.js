@@ -41,9 +41,7 @@ const Product = () => {
                     <p className="pl-2">Price : {item.productprice}</p>
                     <div className="row">
                       <div className="col-md-6">
-                        <a href="#" className="btn btn-success">
-                          Chek More
-                        </a>
+                        <NavLink to={`/productdetail/${item._id}`} className="btn btn-success">Chek More</NavLink>
                       </div>
                       <div className="col-md-6 text-right mt-2 text-capitalize">
                         Category : {item.productcategory}
