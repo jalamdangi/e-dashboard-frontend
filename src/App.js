@@ -11,6 +11,7 @@ import Logout from './Components/Logout';
 import SignUp from './Components/SignUp';
 import PrivateComponent from './Components/PrivateComponent';
 import Login from './Components/Login';
+import Advancetopics from './Components/Advancetopics';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               <Route exact path="/" element={<Product/>}/>
               <Route exact path="/addproduct" element={<AddProduct/>}/>
               <Route exact path="/updateproduct/:id" element={<UpdateProduct/>}/>
+              <Route exact path="/advancetopics" element={<Advancetopics/>}/>
               <Route exact path="/profile" element={<Profile/>}/>
               <Route exact path="/logout" element={<Logout/>}/>
             </Route>

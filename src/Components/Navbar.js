@@ -21,7 +21,7 @@ const Navbar = () => {
           <ul className="navbar-nav ml-auto">
             <li className="nav-item"><NavLink className="nav-link text-light" to="/">Product<span className="sr-only">(current)</span></NavLink></li>
             <li className="nav-item"><NavLink className="nav-link text-light" to="/addproduct">Add Product</NavLink></li>
-            <li className="nav-item"><NavLink className="nav-link text-light" to="/updateproduct">Update Product</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link text-light" to="/advancetopics">Advance</NavLink></li>
             <li className="nav-item"><NavLink className="nav-link text-light" to="/profile">Profile</NavLink></li>
             <li><NavLink className="nav-link text-light" to="/signup" onClick={logeOut}>Logout</NavLink></li>
           </ul>:
