@@ -4,12 +4,14 @@ const Userdata = lazy(() => import('./subcomponent/Userdata'))
 const Another = lazy(() => import('./subcomponent/Another'))
 
  const Advancetopics = () => {
-    const [page, setPage] = useState(<><Suspense><Another></Another><Userdata></Userdata></Suspense></>)
+    const [page, setPage] = useState(<>
+                                    <Suspense fallback={<h3 className='loader-another'>Another is Loading</h3>}><Another></Another></Suspense>
+                                    <Suspense fallback={<h3 className='loader'>User Data Loading</h3>}><Userdata></Userdata></Suspense>
+                                    </>)
     const lazyLoading = () =>{
     setPage(<>
-              <Suspense>
-              <Another></Another><Userdata></Userdata>
-              </Suspense>
+              <Suspense fallback={<h3 className='loader-another'>Another is Loading</h3>}><Another></Another></Suspense>
+              <Suspense fallback={<h3 className='loader'>User Data Loading</h3>}><Userdata></Userdata></Suspense>
             </>);
     } 
     const higherOrdercomponent = () =>{
