@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 
 const Productdetail = () => {
   useEffect(() => {
-    getProductDetail()
+    getProductDetail();
   }, [])
   const [data, setData] = useState('')
   const { id } = useParams()
